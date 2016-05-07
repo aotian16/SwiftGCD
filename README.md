@@ -10,7 +10,7 @@ Make GCD easy to use in swift.
 
 # use
 
-```
+```swift
 		gcd.main().async { 
             print("main async")
         }
