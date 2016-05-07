@@ -54,6 +54,10 @@ Make GCD easy to use in swift.
         print("result = \(result)")
 ```
 
+# see also
+
+[GCDKit](https://github.com/JohnEstropia/GCDKit)
+
 # license
 
 MIT
