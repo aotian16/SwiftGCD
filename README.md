@@ -8,6 +8,19 @@ Make GCD easy to use in swift.
 | 1    | carthage | `github "aotian16/SwiftGCD" ~> 1.0.0` |
 | 2    | manual   | just copy *.swift to your project.    |
 
+# api detail
+
+| SwiftGCD | GCD                       |
+| -------- | ------------------------- |
+| main     | dispatch_get_main_queue   |
+| global   | dispatch_get_global_queue |
+| custom   | dispatch_queue_create     |
+| group    | dispatch_group_create     |
+| async    | dispatch_async            |
+| after    | dispatch_after            |
+| apply    | dispatch_apply            |
+| once     | dispatch_once             |
+
 # use
 
 ```swift
