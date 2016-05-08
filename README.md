@@ -65,6 +65,13 @@ Make GCD easy to use in swift.
         }
         let result = group.wait(2)
         print("result = \(result)")
+        
+        gcd.sharedMain.async { 
+            print("sharedMain")
+        }
+        gcd.sharedGlobalHigh.async {
+            print("sharedGlobalHigh")
+        }
 ```
 
 # see also

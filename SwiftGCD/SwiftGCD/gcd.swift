@@ -10,6 +10,68 @@ import Foundation
 
 public class gcd {
     
+    private static var _sharedMain: GCDQueue?
+    private static var _sharedGlobalHigh: GCDQueue?
+    private static var _sharedGlobalDefault: GCDQueue?
+    private static var _sharedGlobalLow: GCDQueue?
+    private static var _sharedGlobalBackground: GCDQueue?
+    
+    public static var sharedMain: GCDQueue {
+        get {
+            if let v = gcd._sharedMain {
+                return v
+            } else {
+                let v = gcd.main()
+                gcd._sharedMain = v
+                return v
+            }
+        }
+    }
+    public static var sharedGlobalHigh: GCDQueue {
+        get {
+            if let v = gcd._sharedGlobalHigh {
+                return v
+            } else {
+                let v = gcd.globalHigh()
+                gcd._sharedGlobalHigh = v
+                return v
+            }
+        }
+    }
+    public static var sharedGlobalDefault: GCDQueue {
+        get {
+            if let v = gcd._sharedGlobalDefault {
+                return v
+            } else {
+                let v = gcd.globalDefault()
+                gcd._sharedGlobalDefault = v
+                return v
+            }
+        }
+    }
+    public static var sharedGlobalLow: GCDQueue {
+        get {
+            if let v = gcd._sharedGlobalLow {
+                return v
+            } else {
+                let v = gcd.globalLow()
+                gcd._sharedGlobalLow = v
+                return v
+            }
+        }
+    }
+    public static var sharedGlobalBackground: GCDQueue {
+        get {
+            if let v = gcd._sharedGlobalBackground {
+                return v
+            } else {
+                let v = gcd.globalBackground()
+                gcd._sharedGlobalBackground = v
+                return v
+            }
+        }
+    }
+    
     public class func main() -> GCDQueue {
         let main = dispatch_get_main_queue()
         let queue = GCDQueue(queue: main)
